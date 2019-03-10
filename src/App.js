@@ -9,6 +9,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { CameraAlt, CameraRoll, Menu, Speaker } from "@material-ui/icons";
 import logo from "./goat records.png";
+import { SocialIcon } from "react-social-icons";
 
 const navItems = ["Film", "Photo", "Sound"];
 const navIcons = [<CameraRoll />, <CameraAlt />, <Speaker />];
@@ -34,6 +35,8 @@ const AppContainer = styled.div`
 const Header = styled(BaseContainer)`
   color: #333;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   font-size: 24px;
   padding: 16px;
   border-bottom: 1px solid #ccc;
@@ -100,6 +103,10 @@ const AppHeader = props => (
         </div>
       </Drawer>
     </MenuContainer>
+    <div>
+      <SocialIcon url="http://facebook.com/g0atrecords" />
+      <SocialIcon url="http://instagram.com/goatrecords" />
+    </div>
   </Header>
 );
 
@@ -114,13 +121,17 @@ const AppContent = () => (
       </HorizontalMenu>
       <h1>Melbourne Content Creators</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        family run creation company.
+        <br />
+        specialising in film / photo / sound
+        <br />
+        integrates creativity & business
+      </p>
+      <p>
+        <q>
+          if a picture is worth a thousand words. a video is worth a million.
+        </q>
+        - <em>advertising expert</em>
       </p>
     </InnerContent>
   </Content>
