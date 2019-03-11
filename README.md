@@ -1,3 +1,7 @@
+## GOAT RECORDS website
+
+React app using the Wordpress REST API to pull in authorable CMS content.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
