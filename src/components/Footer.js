@@ -4,16 +4,13 @@ import * as moment from "moment";
 
 export const Container = styled.div`
   padding: 16px;
-  border-top: 1px solid #ccc;
+  background: black;
   text-align: center;
+  color: white;
+  box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.75);
 `;
 
 const getCurrentYear = () => moment().year();
-
-class Footer extends React.Component {
-  render() {
-    return <Container>© {getCurrentYear()} Goat Records</Container>;
-  }
-}
+const Footer = () => <Container>© {getCurrentYear()} Goat Records</Container>;
 
 export default Footer;

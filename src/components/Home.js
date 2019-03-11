@@ -4,9 +4,26 @@ import logo from "./goat records.png";
 import styled from "styled-components";
 import { Content, InnerContent } from "./commonstyles";
 
+const homepageContentApi =
+  "http://goatrecords.com.au/wp-json/wp/v2/pages?slug=goat-records-record-keeping-agency";
+
 export const Logo = styled.img`
-  min-width: 288px;
+  min-width: 256px;
+  max-width: 500px;
   width: 100%;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  display: block;
+`;
+
+const MainContent = styled.div`
+  border-top: 1px solid #ccc;
+  padding-top: 32px;
+  margin-bottom: 48px;
+`;
+
+const Heading = styled.h1`
+  margin-bottom: 16px;
 `;
 
 export class Home extends React.Component {
@@ -16,9 +33,7 @@ export class Home extends React.Component {
   }
 
   componentDidMount() {
-    axios(
-      "http://goatrecords.com.au/wp-json/wp/v2/pages?slug=goat-records-record-keeping-agency"
-    ).then(response =>
+    axios(homepageContentApi).then(response =>
       this.setState({ content: response.data[0].content.rendered })
     );
   }
@@ -28,21 +43,23 @@ export class Home extends React.Component {
       <Content>
         <InnerContent>
           <Logo src={logo} alt="Logo" />
-          <h1>Melbourne Content Creators</h1>
-          <p>
-            family run creation company.
-            <br />
-            specialising in film / photo / sound
-            <br />
-            integrates creativity & business
-          </p>
-          <p>
-            <q>
-              if a picture is worth a thousand words. a video is worth a
-              million.
-            </q>
-            - <em>advertising expert</em>
-          </p>
+          <MainContent>
+            <Heading>Melbourne Content Creators</Heading>
+            <p>
+              family run creation company.
+              <br />
+              specialising in film / photo / sound
+              <br />
+              integrates creativity & business
+            </p>
+            <p>
+              <q>
+                if a picture is worth a thousand words. a video is worth a
+                million.
+              </q>
+              - <em>advertising expert</em>
+            </p>
+          </MainContent>
           <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
         </InnerContent>
       </Content>
