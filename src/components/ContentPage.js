@@ -20,6 +20,7 @@ export class ContentPage extends React.Component {
     return (
       <Content>
         <InnerContent>
+          <h1>{this.props.slug.toUpperCase()}</h1>
           <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
         </InnerContent>
       </Content>

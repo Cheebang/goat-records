@@ -5,6 +5,7 @@ import { ContentPage } from "./ContentPage";
 import { Home } from "./Home";
 import Footer from "./Footer";
 import AppHeader from "./AppHeader";
+import "typeface-roboto";
 
 const AppContainer = styled.div`
   height: 100%;
@@ -24,12 +25,12 @@ class App extends Component {
   render() {
     return (
       <AppContainer>
-        <AppHeader
-          toggleDrawer={this.toggleDrawer}
-          drawer={this.state.drawer}
-        />
         <Router>
           <>
+            <AppHeader
+              toggleDrawer={this.toggleDrawer}
+              drawer={this.state.drawer}
+            />
             <Route path="/" exact component={Home} />
             <Route path="/film" component={() => <ContentPage slug="film" />} />
             <Route
