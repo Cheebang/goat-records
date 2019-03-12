@@ -1,10 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { ContentPage } from "./ContentPage";
 import { Home } from "./Home";
 import Footer from "./Footer";
 import AppHeader from "./AppHeader";
+import { MediaQueryProvider } from "react-media-query-hoc";
 import "typeface-roboto";
 
 const AppContainer = styled.div`
@@ -12,41 +13,31 @@ const AppContainer = styled.div`
   min-width: 320px;
 `;
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = { drawer: false };
-  }
+const Photo = () => <ContentPage slug="photo" />;
+const Film = () => <ContentPage slug="film" />;
+const Sound = () => <ContentPage slug="sound" />;
 
-  toggleDrawer = () => {
-    this.setState({ drawer: !this.state.drawer });
-  };
+const customQueries = {
+  mobile: "screen and (max-width: 500px)",
+  tablet: "screen and (min-width: 501px) and (max-width: 768px)",
+  desktop: "screen and (min-width: 769px)"
+};
 
-  render() {
-    return (
-      <AppContainer>
-        <Router>
-          <>
-            <AppHeader
-              toggleDrawer={this.toggleDrawer}
-              drawer={this.state.drawer}
-            />
-            <Route path="/" exact component={Home} />
-            <Route path="/film" component={() => <ContentPage slug="film" />} />
-            <Route
-              path="/photo"
-              component={() => <ContentPage slug="photo" />}
-            />
-            <Route
-              path="/sound"
-              component={() => <ContentPage slug="sound" />}
-            />
-          </>
-        </Router>
-        <Footer />
-      </AppContainer>
-    );
-  }
-}
+const App = () => (
+  <MediaQueryProvider queries={customQueries}>
+    <AppContainer>
+      <Router>
+        <>
+          <AppHeader />
+          <Route path="/" exact component={Home} />
+          <Route path="/film" component={Film} />
+          <Route path="/photo" component={Photo} />
+          <Route path="/sound" component={Sound} />
+        </>
+      </Router>
+      <Footer />
+    </AppContainer>
+  </MediaQueryProvider>
+);
 
 export default App;
