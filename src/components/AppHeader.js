@@ -48,9 +48,7 @@ export class AppHeader extends React.Component {
     this.state = { drawer: false };
   }
 
-  toggleDrawer = () => {
-    this.setState({ drawer: !this.state.drawer });
-  };
+  toggleDrawer = () => this.setState({ drawer: !this.state.drawer });
 
   render() {
     const { classes, media } = this.props;

@@ -8461,6 +8461,13 @@ react-scripts@2.1.8:
   optionalDependencies:
     fsevents "1.2.4"
 
+react-scroll-parallax@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-scroll-parallax/-/react-scroll-parallax-2.0.2.tgz#c9f66b6cfcde677b1968ab6858f260e21a8d4a7a"
+  integrity sha512-wmpPF1u+S9bXPmhR0Yc/LpMp3zXD1w7mZqU7nicKf2GBtnbmUGgc3hAPw/QJUFESvEy540+kQJ97HMZsv1X3QA==
+  dependencies:
+    prop-types "^15.5.10"
+
 react-social-icons@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/react-social-icons/-/react-social-icons-4.1.0.tgz#d8c1f846783cba15ae0e75704377bc67805f4c20"
