@@ -4,7 +4,6 @@ import logo from "./goat records.png";
 import styled from "styled-components";
 import { InnerContent } from "./commonstyles";
 import { ParallaxBanner, Parallax } from "react-scroll-parallax";
-import video from "./videoplayback.mp4";
 import { withMedia } from "react-media-query-hoc";
 
 const homepageContentApi =
@@ -96,18 +95,19 @@ export class Home extends React.Component {
       <>
         <BannerContainer>
           <ParallaxBanner
-            style={{ height: "55vh", minHeight: "300px" }}
+            style={{ height: "65vh", minHeight: "300px" }}
             layers={[
               {
-                amount: 0,
+                amount: 1,
                 children: (
-                  <video
-                    autoPlay
-                    loop
-                    playsInline
-                    preload="auto"
-                    muted
-                    src={video}
+                  <iframe
+                    title="banner"
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/_tb30KJT_ao?autoplay=1"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
                   />
                 )
               }
