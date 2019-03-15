@@ -11,6 +11,6 @@ export const Container = styled.div`
 `;
 
 const getCurrentYear = () => moment().year();
-const Footer = () => <Container>© {getCurrentYear()} Goat Records</Container>;
+const Footer = () => <Container>© {getCurrentYear()} GOAT Records</Container>;
 
 export default Footer;
